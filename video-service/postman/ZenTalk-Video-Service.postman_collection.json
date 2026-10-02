@@ -1,0 +1,122 @@
+{
+  "info": {
+    "name": "ZenTalk Video Service",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Health",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/api/v1/video/health"
+      }
+    },
+    {
+      "name": "Enter Video Room",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{jwtA}}"
+          }
+        ],
+        "url": "{{baseUrl}}/api/v1/video/rooms/enter"
+      }
+    },
+    {
+      "name": "Snapshot",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{jwtA}}"
+          }
+        ],
+        "url": "{{baseUrl}}/api/v1/video/rooms/snapshot"
+      }
+    },
+    {
+      "name": "Connect",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{jwtA}}"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"targetUserId\": \"{{userB}}\"\n}"
+        },
+        "url": "{{baseUrl}}/api/v1/video/rooms/connect"
+      }
+    },
+    {
+      "name": "Accept",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{jwtB}}"
+          }
+        ],
+        "url": "{{baseUrl}}/api/v1/video/rooms/accept/{{requestId}}"
+      }
+    },
+    {
+      "name": "Reject",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{jwtB}}"
+          }
+        ],
+        "url": "{{baseUrl}}/api/v1/video/rooms/reject/{{requestId}}"
+      }
+    },
+    {
+      "name": "Cancel",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{jwtA}}"
+          }
+        ],
+        "url": "{{baseUrl}}/api/v1/video/rooms/cancel/{{requestId}}"
+      }
+    },
+    {
+      "name": "End Call",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{jwtA}}"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"sessionId\": \"{{sessionId}}\",\n  \"reason\": \"USER_ENDED\"\n}"
+        },
+        "url": "{{baseUrl}}/api/v1/video/call/end"
+      }
+    }
+  ]
+}

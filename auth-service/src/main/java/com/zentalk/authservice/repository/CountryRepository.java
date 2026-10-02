@@ -1,0 +1,7 @@
+package com.zentalk.authservice.repository;
+import com.zentalk.authservice.entity.Country;
+import org.springframework.data.jpa.repository.JpaRepository;
+import java.util.List;
+public interface CountryRepository extends JpaRepository<Country, Long> {
+    List<Country> findAllByOrderByNameAsc();
+}

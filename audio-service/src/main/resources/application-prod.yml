@@ -1,0 +1,89 @@
+server:
+  port: 8082
+
+spring:
+
+  datasource:
+    url: ${DB_URL}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+
+  jpa:
+
+    hibernate:
+      ddl-auto: update
+
+    show-sql: false
+
+  flyway:
+    enabled: true
+
+  data:
+
+    redis:
+      host: ${REDIS_HOST}
+      port: ${REDIS_PORT}
+
+jwt:
+
+#  secret: ${JWT_SECRET}
+  secret: WmVuVGFsay1BdXRoLVNlcnZpY2UtSldULVNlY3JldC1LZXktMjAyNi1Qcm9kdWN0aW9u
+audio:
+
+  queue:
+
+    request-timeout-seconds: 30
+
+    disconnect-grace-seconds: 15
+
+    heartbeat-seconds: 20
+
+    matchmaking-batch-size: 50
+
+redis:
+
+  channel:
+
+    queue-events: audio.queue.events
+
+    call-events: audio.call.events
+
+websocket:
+
+  endpoint: /ws
+
+  application-destination-prefix: /app
+
+  broker:
+
+    destination-prefix: /topic
+
+coturn:
+
+  enabled: true
+
+  host: ${TURN_HOST}
+
+  port: ${TURN_PORT}
+
+  username: ${TURN_USERNAME}
+
+  password: ${TURN_PASSWORD}
+
+management:
+
+  endpoints:
+
+    web:
+
+      exposure:
+
+        include: health,info,metrics
+
+logging:
+
+  level:
+
+    root: INFO
+
+    com.zentalk: INFO

@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: audio-service
+
+  profiles:
+    active: dev
+
+server:
+  port: 8082
+
+logging:
+  level:
+    root: INFO
+    com.zentalk: DEBUG

@@ -1,0 +1,9 @@
+package com.zentalk.video.enums;
+
+public enum CallEndReason {
+    USER_ENDED,
+    NETWORK_LOST,
+    DISCONNECTED,
+    TIMEOUT,
+    SERVER_SHUTDOWN
+}

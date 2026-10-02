@@ -1,0 +1,23 @@
+CREATE TABLE users (
+    id BIGINT NOT NULL AUTO_INCREMENT,
+    user_id VARCHAR(40) NOT NULL,
+    name VARCHAR(100) NOT NULL,
+    email VARCHAR(255) NOT NULL,
+    email_verified BOOLEAN NOT NULL DEFAULT FALSE,
+    gender VARCHAR(20) NOT NULL,
+    profile_photo_url VARCHAR(500),
+    country_id BIGINT NOT NULL,
+    state_id BIGINT NOT NULL,
+    city_id BIGINT NOT NULL,
+    communication_seconds BIGINT NOT NULL DEFAULT 0,
+    profile_completion INT NOT NULL DEFAULT 0,
+    created_at TIMESTAMP(6) NOT NULL,
+    updated_at TIMESTAMP(6) NOT NULL,
+    last_login_at TIMESTAMP(6),
+    PRIMARY KEY (id),
+    UNIQUE KEY uk_users_user_id (user_id),
+    UNIQUE KEY uk_users_email (email),
+    CONSTRAINT fk_users_country FOREIGN KEY (country_id) REFERENCES countries(id),
+    CONSTRAINT fk_users_state FOREIGN KEY (state_id) REFERENCES states(id),
+    CONSTRAINT fk_users_city FOREIGN KEY (city_id) REFERENCES cities(id)
+);

@@ -1,0 +1,95 @@
+server:
+  port: 8082
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/zentalk_auth?createDatabaseIfNotExist=true&serverTimezone=UTC
+    username: root
+    password: p@ssword
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+    show-sql: true
+
+    properties:
+      hibernate:
+        format_sql: true
+        jdbc:
+          time_zone: UTC
+
+  flyway:
+    enabled: true
+    baseline-on-migrate: true
+
+  data:
+    redis:
+      host: localhost
+      port: 6379
+      timeout: 3000ms
+
+jwt:
+  secret: WmVuVGFsay1BdXRoLVNlcnZpY2UtSldULVNlY3JldC1LZXktMjAyNi1Qcm9kdWN0aW9u
+
+audio:
+
+  queue:
+
+    request-timeout-seconds: 30
+
+    disconnect-grace-seconds: 15
+
+    heartbeat-seconds: 20
+
+    matchmaking-batch-size: 20
+
+redis:
+
+  channel:
+
+    queue-events: audio.queue.events
+
+    call-events: audio.call.events
+
+websocket:
+
+  endpoint: /ws
+
+  application-destination-prefix: /app
+
+  broker:
+
+    destination-prefix: /topic
+
+coturn:
+
+  enabled: true
+
+  host: localhost
+
+  port: 3478
+
+  username: zentalk
+
+  password: zentalk
+
+management:
+
+  endpoints:
+
+    web:
+
+      exposure:
+
+        include: health,info,metrics
+
+logging:
+
+  level:
+
+    org.springframework.security: DEBUG
+
+    org.springframework.web.socket: INFO
+
+    com.zentalk: DEBUG
