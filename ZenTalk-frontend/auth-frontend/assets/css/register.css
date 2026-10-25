@@ -1,0 +1,226 @@
+
+/* ========================================
+   ZENTALK — REGISTER PAGE
+   All colors from theme.css
+======================================== */
+
+.container {
+    background: var(--bg);
+    color: var(--text);
+}
+
+.register-card {
+    width: 100%;
+    max-width: 480px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    background: var(--surface);
+    color: var(--text);
+    border: 1px solid var(--border);
+    border-radius: 24px;
+    padding: 28px;
+    box-shadow: 0 12px 40px
+        rgba(var(--shadow-color), var(--shadow-opacity));
+}
+
+.register-card h2 {
+    margin: 0 0 24px;
+    text-align: center;
+    color: var(--text);
+}
+
+.register-card section {
+    display: grid;
+    gap: 12px;
+}
+
+.register-card input,
+.register-card select {
+    width: 100%;
+    min-height: 48px;
+    box-sizing: border-box;
+    padding: 13px 15px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background: var(--surface);
+    color: var(--text);
+    font: inherit;
+    transition: border-color 0.2s ease,
+                box-shadow 0.2s ease;
+}
+
+.register-card input::placeholder {
+    color: var(--text-muted);
+}
+
+.register-card input:focus,
+.register-card select:focus {
+    outline: 2px solid var(--focus-ring);
+    outline-offset: 1px;
+    border-color: var(--primary);
+}
+
+.register-card input:disabled,
+.register-card select:disabled {
+    background: var(--surface-secondary);
+    color: var(--text-muted);
+    cursor: not-allowed;
+    opacity: 0.8;
+}
+
+.register-card label {
+    margin-top: 4px;
+    color: var(--text);
+    font-size: 14px;
+    font-weight: 600;
+}
+
+/* Buttons */
+
+.register-card .btn {
+    width: 100%;
+    min-height: 48px;
+    margin-top: 8px;
+    background: var(--primary);
+    color: var(--text-on-primary);
+    border: 1px solid var(--primary);
+    border-radius: 999px;
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s ease,
+                border-color 0.2s ease,
+                opacity 0.2s ease;
+}
+
+.register-card .btn:hover:not(:disabled) {
+    background: var(--primary-hover);
+    border-color: var(--primary-hover);
+}
+
+.register-card .btn:active:not(:disabled) {
+    background: var(--primary-active);
+    border-color: var(--primary-active);
+}
+
+.register-card .btn:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+}
+
+.register-card .btn-outline {
+    background: var(--surface);
+    color: var(--primary);
+    border-color: var(--primary);
+}
+
+.register-card .btn-outline:hover:not(:disabled) {
+    background: var(--primary-soft);
+    color: var(--primary);
+}
+
+/* Messages and links */
+
+.register-card .small {
+    color: var(--text-secondary);
+    font-size: 13px;
+    line-height: 1.6;
+    overflow-wrap: anywhere;
+}
+
+.register-card #emailStatus,
+.register-card #msg {
+    margin: 0;
+}
+
+.register-card #loginPrompt {
+    padding: 12px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background: var(--surface-secondary);
+    color: var(--text-secondary);
+}
+
+.register-card .link {
+    color: var(--primary);
+}
+
+.register-card .link:hover {
+    color: var(--primary-hover);
+}
+
+.register-card [hidden] {
+    display: none !important;
+}
+
+.register-card :focus-visible {
+    outline-color: var(--focus-ring);
+}
+
+/* ========================================
+   SIX SEPARATE OTP BOXES
+======================================== */
+
+.register-card .otp-box {
+    display: grid;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    gap: 10px;
+    width: 100%;
+    margin: 8px 0 16px;
+}
+
+.register-card .otp-box .otp-digit {
+    width: 100%;
+    min-width: 0;
+    height: 52px;
+    min-height: 52px;
+    box-sizing: border-box;
+    padding: 0;
+    border: 1px solid var(--border-strong);
+    border-radius: 10px;
+    background: var(--surface);
+    color: var(--text);
+    text-align: center;
+    font-family: inherit;
+    font-size: 22px;
+    font-weight: 600;
+    letter-spacing: normal;
+    caret-color: var(--primary);
+}
+
+.register-card .otp-box .otp-digit:focus {
+    outline: 2px solid var(--focus-ring);
+    outline-offset: 2px;
+    border-color: var(--primary);
+}
+
+/* Hidden combined value used by register.js */
+.register-card #otp {
+    display: none;
+}
+
+/* Responsive layout */
+
+@media (max-width: 480px) {
+    .register-card {
+        padding: 22px 18px;
+        border-radius: 18px;
+    }
+
+    .container {
+        padding: 16px;
+    }
+}
+
+@media (max-width: 380px) {
+    .register-card .otp-box {
+        gap: 6px;
+    }
+
+    .register-card .otp-box .otp-digit {
+        height: 46px;
+        min-height: 46px;
+        font-size: 19px;
+        border-radius: 8px;
+    }
+}

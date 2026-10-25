@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ZenTalk Dashboard</title>
+
+    <!-- Global theme -->
+    <link rel="stylesheet" href="./assets/css/theme.css">
+
+    <!-- Common styles -->
+    <link rel="stylesheet" href="./assets/css/style.css">
+
+    <!-- Dashboard styles -->
+    <link rel="stylesheet" href="./assets/css/dashboard.css">
+
+    <!-- Apply saved theme -->
+    <script src="./assets/js/theme.js" defer></script>
+</head>
+
+<body>
+    <!-- Dashboard header -->
+    <header class="topbar dashboard-topbar">
+        <h3>ZenTalk</h3>
+
+        <button type="button" id="openProfile" class="profile-link" title="Open Profile" aria-label="Open Profile"
+            aria-controls="profileDrawer" aria-expanded="false">
+            <span id="profileName"></span>
+
+            <img id="profileIcon" class="profile-button" src="https://i.pravatar.cc/100" alt="Profile">
+        </button>
+    </header>
+
+    <!-- Main dashboard stays full screen -->
+    <main class="container dashboard-container">
+        <h2>Welcome</h2>
+
+        <div class="grid3">
+            <!-- Audio Call -->
+            <!-- <div class="opt-card" onclick="go(8081, 'audio')" role="button" tabindex="0" onkeydown="if(event.key === 'Enter' || event.key === ' ') {
+                    event.preventDefault();
+                    go(8081, 'audio');
+                }">
+                <h3>🎙️ Audio Call</h3>
+                <p class="small">Port 8081</p>
+            </div> -->
+
+
+            <!-- Audio Call -->
+            <div class="opt-card" id="audioCallCard" role="link" tabindex="0" aria-label="Open Audio Call">
+                <h3>🎙️ Audio Call</h3>
+                <p class="small">Audio Service</p>
+            </div>
+
+
+            <!-- Video Call -->
+            <div class="opt-card" onclick="go(8082, 'video')" role="button" tabindex="0" onkeydown="if(event.key === 'Enter' || event.key === ' ') {
+                    event.preventDefault();
+                    go(8082, 'video');
+                }">
+                <h3>📹 Video Call</h3>
+                <p class="small">Port 8082</p>
+            </div>
+
+            <!-- AI Chat -->
+            <div class="opt-card" id="aiChatCard" role="link" tabindex="0">
+                <h3>🤖 AI Chat</h3>
+                <p class="small">Port 8080</p>
+            </div>
+        </div>
+
+        <p id="dashboardMsg" class="small" role="status" aria-live="polite"></p>
+    </main>
+
+    <!-- Background overlay -->
+    <div id="profileOverlay" class="profile-drawer-overlay" aria-hidden="true"></div>
+
+    <!-- Right-side profile drawer -->
+    <aside id="profileDrawer" class="profile-drawer" aria-label="My Profile" aria-hidden="true" inert>
+        <div class="profile-drawer-header">
+            <h2>My Profile</h2>
+
+            <button type="button" id="closeProfile" class="profile-drawer-close" aria-label="Close profile"
+                title="Close profile">
+                &times;
+            </button>
+        </div>
+
+        <iframe id="profileFrame" class="profile-drawer-frame" title="My Profile" src="about:blank"></iframe>
+    </aside>
+
+    <!-- Dashboard JavaScript -->
+    <script type="module" src="./assets/js/dashboard.js"></script>
+</body>
+
+</html>

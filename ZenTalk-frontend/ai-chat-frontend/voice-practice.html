@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#080808">
+    <title>Voice Practice | AI Assistant</title>
+    <link rel="stylesheet" href="./voice-practice.css">
+</head>
+
+<body>
+    <main class="voice-app">
+
+        <header class="voice-header">
+            <a class="back-button" href="./ai.html">
+                ← Back to Chat
+            </a>
+            <div class="header-title">✳ AI Voice</div>
+            <span class="connection-label" id="connectionStatus">
+                Ready
+            </span>
+        </header>
+
+        <section class="voice-content">
+            <div class="mode-label">VOICE CONVERSATION</div>
+
+            <h1>Let's talk.</h1>
+            <p class="subtitle">
+                Speak naturally. Listen to your AI partner and
+                improve your English one conversation at a time.
+            </p>
+
+            <div class="voice-orb" id="voiceOrb">
+                <span class="orb-icon">✳</span>
+            </div>
+
+            <h2 id="statusText">Ready to talk?</h2>
+            <p id="statusDetail" class="status-detail">
+                Choose a mode and start your conversation.
+            </p>
+
+            <div class="mode-controls">
+                <button id="practiceBtn" class="mode-button active">
+                    English Practice
+                    <small>Speak and learn</small>
+                </button>
+
+                <button id="handsFreeBtn" class="mode-button">
+                    Hands-free
+                    <small>Automatic conversation</small>
+                </button>
+            </div>
+
+            <div class="accent-selector">
+               <label for="accentSelect">AI Voice Accent</label>
+               <select id="accentSelect">
+                  <option value="en-IN">🇮🇳 Indian English (Default)</option>
+                  <option value="en-US">🇺🇸 American English</option>
+                  <option value="en-GB">🇬🇧 British English</option>
+                  <option value="en-AU">🇦🇺 Australian English</option> 
+               </select>
+            </div>
+
+            <div class="transcript-card">
+                <div class="transcript-heading">YOU SAID</div>
+                <p id="transcriptText">
+                    Your speech will appear here.
+                </p>
+
+                <div class="transcript-divider"></div>
+
+                <div class="transcript-heading">AI REPLIED</div>
+                <p id="replyText">
+                    Your AI partner's reply will appear here.
+                </p>
+
+                <button id="replayBtn" class="replay-button" disabled>
+                    ▶ Replay AI reply
+                </button>
+            </div>
+
+            <div class="action-controls">
+                <button id="micBtn" class="mic-button">
+                    🎙 Start speaking
+                </button>
+
+                <button id="stopBtn" class="stop-button" disabled>
+                    ■ Stop
+                </button>
+            </div>
+
+            <p class="privacy-note">
+                Your microphone is used only after you start voice mode.
+                Keep your microphone permission enabled.
+            </p>
+
+            <p id="errorText" class="error-text" role="alert"></p>
+        </section>
+    </main>
+
+    <script src="./voice-practice.js"></script>
+</body>
+
+</html>

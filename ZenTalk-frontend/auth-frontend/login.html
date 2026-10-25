@@ -1,0 +1,98 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Login | ZenTalk</title>
+
+    <link rel="stylesheet" href="assets/css/theme.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/login.css">
+
+    <script src="assets/js/theme.js" defer></script>
+    <script type="module" src="assets/js/login.js"></script>
+</head>
+
+<body>
+    <main class="container">
+        <section class="card login-card">
+            <h2>Login to ZenTalk</h2>
+
+            <form id="loginForm" novalidate>
+                <label for="email" class="small">Email Address</label>
+
+                <input
+                    id="email"
+                    class="input"
+                    type="email"
+                    placeholder="Enter your email address"
+                    autocomplete="email"
+                    required
+                >
+
+                <button id="btn1" class="btn" type="submit">
+                    Send OTP
+                </button>
+            </form>
+
+            <section id="otpSec" hidden>
+                <label for="otp-1" class="small">Verification Code</label>
+
+                <div
+                    class="otp-box"
+                    id="otpBoxes"
+                    role="group"
+                    aria-label="6-digit verification code"
+                >
+                    <input class="otp-digit" id="otp-1" type="text"
+                        inputmode="numeric" maxlength="1"
+                        autocomplete="one-time-code" aria-label="Digit 1">
+
+                    <input class="otp-digit" id="otp-2" type="text"
+                        inputmode="numeric" maxlength="1" aria-label="Digit 2">
+
+                    <input class="otp-digit" id="otp-3" type="text"
+                        inputmode="numeric" maxlength="1" aria-label="Digit 3">
+
+                    <input class="otp-digit" id="otp-4" type="text"
+                        inputmode="numeric" maxlength="1" aria-label="Digit 4">
+
+                    <input class="otp-digit" id="otp-5" type="text"
+                        inputmode="numeric" maxlength="1" aria-label="Digit 5">
+
+                    <input class="otp-digit" id="otp-6" type="text"
+                        inputmode="numeric" maxlength="1" aria-label="Digit 6">
+                </div>
+
+                <!-- Combined value consumed by login.js -->
+                <input id="otp" type="hidden" value="">
+
+                <button id="btn2" class="btn" type="button">
+                    Verify &amp; Login
+                </button>
+
+                <p class="small resend-text">
+                    Didn't receive a code?
+                    <button id="resend" class="link" type="button">
+                        Resend OTP
+                    </button>
+                </p>
+            </section>
+
+            <p class="small account-prompt">
+                New to ZenTalk?
+                <a class="link" href="register.html">Create an account</a>
+            </p>
+
+            <p
+                id="msg"
+                class="small login-message"
+                role="status"
+                aria-live="polite"
+            ></p>
+        </section>
+    </main>
+</body>
+</html>

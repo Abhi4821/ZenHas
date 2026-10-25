@@ -1,0 +1,143 @@
+
+/* ========================================
+   ZENTALK — GLOBAL THEME TOKENS
+   No component styles in this file.
+======================================== */
+
+/* Default theme: Light */
+:root,
+[data-theme="light"] {
+    color-scheme: light;
+
+    /* Brand colors */
+    --primary: #7B2345;
+    --primary-hover: #641A37;
+    --primary-active: #4D142B;
+    --primary-soft: #F4E5EB;
+
+    /* Secondary / accent */
+    --accent: #B88650;
+    --accent-hover: #96683B;
+    --accent-soft: #F5EBDD;
+
+    /* Surfaces */
+    --bg: #FAF6F7;
+    --surface: #FFFFFF;
+    --surface-secondary: #F4ECEF;
+    --surface-hover: #F0E2E7;
+    --overlay: #FFFFFF;
+
+    /* Text */
+    --text: #28151E;
+    --text-secondary: #705D65;
+    --text-muted: #8B7A81;
+    --text-on-primary: #FFFFFF;
+    --text-on-accent: #281A10;
+
+    /* Borders */
+    --border: #E7D8DE;
+    --border-strong: #CFB6C1;
+    --focus-ring: #A64D70;
+
+    /* Status colors */
+    --success: #187653;
+    --success-soft: #E4F4EC;
+    --warning: #986017;
+    --warning-soft: #FBF0D8;
+    --error: #BD3048;
+    --error-soft: #FBE8EC;
+    --info: #315F9C;
+    --info-soft: #E8F0FC;
+
+    /* Shadows: values, not component styles */
+    --shadow-color: 65, 22, 42;
+    --shadow-opacity: 0.08;
+
+    /* Scrollbar colors */
+    --scrollbar-track: #F4ECEF;
+    --scrollbar-thumb: #D2B8C3;
+    --scrollbar-thumb-hover: #A9788D;
+
+    /* Theme-specific gradients */
+    --brand-gradient: linear-gradient(
+        135deg,
+        #7B2345,
+        #4D142B
+    );
+
+    --accent-gradient: linear-gradient(
+        135deg,
+        #D4AE7B,
+        #B88650
+    );
+}
+
+/* ========================================
+   DARK — BURGUNDY / MAROON
+======================================== */
+
+[data-theme="dark"] {
+    color-scheme: dark;
+
+    /* Brand colors */
+    --primary: #D66B91;
+    --primary-hover: #E687A8;
+    --primary-active: #B84E75;
+    --primary-soft: #492033;
+
+    /* Secondary / accent */
+    --accent: #E0B77D;
+    --accent-hover: #F0CA95;
+    --accent-soft: #40301F;
+
+    /* Surfaces */
+    --bg: #160D12;
+    --surface: #21131B;
+    --surface-secondary: #2C1923;
+    --surface-hover: #39202D;
+    --overlay: #2A1922;
+
+    /* Text */
+    --text: #F7EDF1;
+    --text-secondary: #D0BAC4;
+    --text-muted: #A58C98;
+    --text-on-primary: #230F18;
+    --text-on-accent: #26180C;
+
+    /* Borders */
+    --border: #49303C;
+    --border-strong: #694353;
+    --focus-ring: #E687A8;
+
+    /* Status colors */
+    --success: #65D6A4;
+    --success-soft: #173A2D;
+    --warning: #F0C477;
+    --warning-soft: #40301B;
+    --error: #FF8D9B;
+    --error-soft: #451D29;
+    --info: #91BCFF;
+    --info-soft: #1B2D47;
+
+    /* Shadows */
+    --shadow-color: 0, 0, 0;
+    --shadow-opacity: 0.28;
+
+    /* Scrollbar colors */
+    --scrollbar-track: #21131B;
+    --scrollbar-thumb: #694353;
+    --scrollbar-thumb-hover: #A66A83;
+
+    /* Theme-specific gradients */
+    --brand-gradient: linear-gradient(
+        135deg,
+        #8D3157,
+        #4D1C32
+    );
+
+    --accent-gradient: linear-gradient(
+        135deg,
+        #E0B77D,
+        #AC7944
+    );
+}

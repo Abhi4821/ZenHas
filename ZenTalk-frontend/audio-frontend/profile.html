@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ZenTalk Audio | Profile</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <script defer src="../js/config.js"></script>
+  <script defer src="../js/auth.js"></script>
+  <script defer src="../js/api.js"></script>
+  <script defer src="../js/profile.js"></script>
+</head>
+<body>
+  <header class="app-header">
+    <a class="brand" href="../index.html">ZenTalk <span>Audio</span></a>
+    <nav>
+      <a href="../index.html">Dashboard</a>
+      <a class="active" href="profile.html">Profile</a>
+      <a href="block-list.html">Block List</a>
+    </nav>
+  </header>
+
+  <main class="container narrow">
+    <section class="panel">
+      <p class="eyebrow">YOUR ACCOUNT</p>
+      <h1>Profile</h1>
+      <p>Audio Service uses your existing Auth Service session.</p>
+
+      <div class="profile-links">
+        <a class="profile-link" href="block-list.html">
+          <span>
+            <strong>Block List</strong>
+            <small>Manage users hidden from your queue</small>
+          </span>
+          <span aria-hidden="true">→</span>
+        </a>
+        <a class="profile-link" href="../index.html">
+          <span>
+            <strong>Queue Dashboard</strong>
+            <small>Return to the audio queue</small>
+          </span>
+          <span aria-hidden="true">→</span>
+        </a>
+      </div>
+
+      <p id="profileStatus" class="status" role="status"></p>
+    </section>
+  </main>
+</body>
+</html>

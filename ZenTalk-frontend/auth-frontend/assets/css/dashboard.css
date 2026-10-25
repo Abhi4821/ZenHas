@@ -1,0 +1,254 @@
+/* ========================================
+   ZENTALK — DASHBOARD PAGE
+   Colors are managed by theme.css
+======================================== */
+
+/* Dashboard header */
+.dashboard-topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    background: var(--surface);
+    color: var(--text);
+    border-bottom: 1px solid var(--border);
+}
+
+.dashboard-topbar h3 {
+    margin: 0;
+    color: var(--text);
+}
+
+/* Profile icon button */
+.profile-link {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: var(--text);
+    font: inherit;
+    cursor: pointer;
+}
+
+.profile-link:hover {
+    color: var(--primary);
+}
+
+.profile-link:focus-visible {
+    outline: 2px solid var(--focus-ring);
+    outline-offset: 4px;
+    border-radius: 8px;
+}
+
+.profile-button {
+    display: block;
+    width: 44px;
+    height: 44px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--border-strong);
+}
+
+/* Main dashboard */
+.dashboard-container {
+    justify-content: flex-start;
+    background: var(--bg);
+    color: var(--text);
+}
+
+/* Dashboard option cards */
+.opt-card {
+    position: relative;
+    cursor: pointer;
+    background: var(--surface);
+    color: var(--text);
+    border: 1px solid var(--border);
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.opt-card:hover {
+    transform: translateY(-3px);
+    background: var(--surface-hover);
+    border-color: var(--primary);
+}
+
+.opt-card:focus-visible {
+    outline: 2px solid var(--focus-ring);
+    outline-offset: 3px;
+}
+
+/* Dashboard message */
+#dashboardMsg {
+    text-align: center;
+    margin-top: 12px;
+    color: var(--text-secondary);
+}
+
+/* ========================================
+   PROFILE DRAWER OVERLAY
+======================================== */
+
+.profile-drawer-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 9998;
+    background: rgb(0 0 0 / 35%);
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    transition:
+        opacity 0.3s ease,
+        visibility 0.3s ease;
+}
+
+.profile-drawer-overlay.is-open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+/* ========================================
+   PROFILE DRAWER
+======================================== */
+
+.profile-drawer {
+    position: fixed;
+    top: 0;
+    right: 0;
+
+    width: 50%;
+    height: 100vh;
+    height: 100dvh;
+
+    z-index: 9999;
+
+    display: flex;
+    flex-direction: column;
+
+    background: var(--surface);
+    color: var(--text);
+
+    border-left: 1px solid var(--border);
+    box-shadow: -8px 0 30px rgb(0 0 0 / 18%);
+
+    transform: translateX(100%);
+    visibility: hidden;
+    pointer-events: none;
+
+    transition:
+        transform 0.3s ease,
+        visibility 0.3s ease;
+}
+
+.profile-drawer.is-open {
+    transform: translateX(0);
+    visibility: visible;
+    pointer-events: auto;
+}
+
+/* Drawer heading */
+.profile-drawer-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+
+    flex-shrink: 0;
+    padding: 14px 20px;
+
+    background: var(--surface-secondary);
+    color: var(--text);
+    border-bottom: 1px solid var(--border);
+}
+
+.profile-drawer-header h2 {
+    margin: 0;
+    color: var(--text);
+    font-size: 1.15rem;
+}
+
+/* Close button */
+.profile-drawer-close {
+    display: grid;
+    place-items: center;
+
+    width: 38px;
+    height: 38px;
+    flex-shrink: 0;
+
+    padding: 0;
+    border: 1px solid var(--border);
+    border-radius: 50%;
+
+    background: var(--surface);
+    color: var(--text);
+
+    font-size: 1.6rem;
+    line-height: 1;
+
+    cursor: pointer;
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.profile-drawer-close:hover {
+    background: var(--surface-hover);
+    border-color: var(--primary);
+}
+
+.profile-drawer-close:focus-visible {
+    outline: 2px solid var(--focus-ring);
+    outline-offset: 3px;
+}
+
+/* Profile page inside drawer */
+.profile-drawer-frame {
+    display: block;
+
+    width: 100%;
+    flex: 1;
+    min-height: 0;
+
+    border: 0;
+    background: var(--bg);
+}
+
+/* Lock dashboard scrolling while drawer is open */
+body.profile-drawer-open {
+    overflow: hidden;
+}
+
+/* ========================================
+   RESPONSIVE
+======================================== */
+
+@media (max-width: 768px) {
+    .profile-drawer {
+        width: min(92%, 520px);
+    }
+
+    .profile-drawer-header {
+        padding: 12px 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .profile-drawer {
+        width: 100%;
+    }
+
+    .profile-button {
+        width: 40px;
+        height: 40px;
+    }
+}

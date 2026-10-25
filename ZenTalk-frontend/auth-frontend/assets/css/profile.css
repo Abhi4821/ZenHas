@@ -1,0 +1,190 @@
+
+/* ========================================
+   ZENTALK — PROFILE PAGE
+   All colors from theme.css
+======================================== */
+
+.profile-container {
+    width: 100%;
+    min-height: calc(100vh - 65px);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 32px 16px;
+    background: var(--bg);
+    color: var(--text);
+    box-sizing: border-box;
+}
+
+.profile-card {
+    width: 100%;
+    max-width: 560px;
+    box-sizing: border-box;
+    text-align: left;
+}
+
+.profile-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+.profile-avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--border-strong);
+    margin-bottom: 12px;
+}
+
+.profile-field {
+    margin: 14px 0;
+    overflow-wrap: anywhere;
+    color: var(--text);
+}
+
+.profile-field strong {
+    display: block;
+    margin-bottom: 5px;
+    color: var(--text);
+}
+
+.profile-actions {
+    display: grid;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.profile-actions .btn {
+    width: 100%;
+}
+
+.profile-divider {
+    border: 0;
+    border-top: 1px solid var(--border);
+    margin: 24px 0;
+}
+
+.profile-message {
+    margin-top: 14px;
+    font-size: 14px;
+    overflow-wrap: anywhere;
+}
+
+.profile-message.error {
+    color: var(--error);
+}
+
+.profile-message.success {
+    color: var(--success);
+}
+
+.profile-secondary {
+    background: var(--surface-secondary);
+    color: var(--text);
+    border: 1px solid var(--border);
+}
+
+.profile-secondary:hover {
+    background: var(--surface-hover);
+}
+
+.profile-danger {
+    background: var(--error);
+    color: var(--text-on-primary);
+}
+
+.profile-danger:hover {
+    opacity: 0.9;
+}
+
+.profile-form {
+    display: grid;
+    gap: 10px;
+    margin-top: 18px;
+}
+
+.profile-form label {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text);
+}
+
+.profile-form input,
+.profile-form select {
+    width: 100%;
+    box-sizing: border-box;
+    background: var(--surface);
+    color: var(--text);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 12px;
+}
+
+.profile-form input::placeholder {
+    color: var(--text-muted);
+}
+
+.profile-form input:focus,
+.profile-form select:focus {
+    outline: 2px solid var(--focus-ring);
+    outline-offset: 1px;
+    border-color: var(--primary);
+}
+
+.profile-hidden {
+    display: none !important;
+}
+
+/* Header and theme toggle */
+
+.topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.topbar h3 {
+    margin: 0;
+    text-align: center;
+    color: var(--text);
+}
+
+.theme-toggle {
+    width: 42px;
+    height: 42px;
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    background: var(--surface);
+    color: var(--text);
+    font-size: 23px;
+    cursor: pointer;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.theme-toggle:hover {
+    background: var(--surface-hover);
+}
+
+.theme-toggle:focus-visible {
+    outline: 2px solid var(--focus-ring);
+    outline-offset: 3px;
+}
+
+@media (max-width: 480px) {
+    .profile-container {
+        padding: 20px 12px;
+    }
+
+    .profile-card {
+        padding: 20px;
+    }
+}

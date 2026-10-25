@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ZenTalk Audio | Call</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+
+    <script defer src="../js/config.js"></script>
+    <script defer src="../js/auth.js"></script>
+    <script defer src="../js/api.js"></script>
+    <script defer src="../js/utils.js"></script>
+    <script defer src="../js/websocket.js"></script>
+    <script defer src="../js/signaling.js"></script>
+    <script defer src="../js/audio-call.js"></script>
+</head>
+
+<body>
+    <header class="app-header">
+        <a class="brand" href="../index.html">
+            ZenTalk <span>Audio</span>
+        </a>
+
+        <nav>
+            <a href="../index.html">Dashboard</a>
+            <a href="profile.html">Profile</a>
+            <a href="block-list.html">Block List</a>
+        </nav>
+    </header>
+
+    <main class="container narrow">
+        <section class="panel call-panel">
+
+            <p class="eyebrow" id="callMode">VOICE CALL</p>
+
+            <div class="avatar call-avatar">
+                <img id="contactAvatar" src="" alt="Contact profile photo" hidden>
+                <span id="contactAvatarFallback">?</span>
+            </div>
+
+            <h1 id="contactName">Loading profile...</h1>
+            <p id="contactEmail"></p>
+            <p id="contactGender"></p>
+            <p id="contactAddress"></p>
+
+            <p id="callStatus" role="status" aria-live="polite">
+                Preparing call...
+            </p>
+
+            <p id="callTimer" hidden>00:00</p>
+
+            <div id="incomingActions" class="queue-actions" hidden>
+                <button id="rejectCallBtn" class="btn btn-danger" type="button">
+                    Decline
+                </button>
+
+                <button id="acceptCallBtn" class="btn btn-success" type="button">
+                    Accept
+                </button>
+            </div>
+
+            <div id="outgoingActions" class="queue-actions" hidden>
+                <button id="cancelCallBtn" class="btn btn-danger" type="button">
+                    Cancel call
+                </button>
+            </div>
+
+            <div id="activeActions" class="queue-actions" hidden>
+                <button id="micBtn" class="btn btn-secondary" type="button" disabled>
+                    Mute microphone
+                </button>
+
+                <button id="endCallBtn" class="btn btn-danger" type="button" disabled>
+                    End call
+                </button>
+            </div>
+
+            <audio id="remoteAudio" autoplay playsinline></audio>
+            <audio id="localAudio" autoplay muted playsinline></audio>
+
+            <p id="callNotice" role="alert" hidden></p>
+
+            <p class="status">
+                Microphone permission required hai. Local testing ke liye
+                localhost, aur deployment mein HTTPS use karein.
+            </p>
+        </section>
+    </main>
+</body>
+
+</html>

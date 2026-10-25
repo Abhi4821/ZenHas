@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ZenTalk Audio | Dashboard</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script defer src="js/config.js"></script>
+
+
+    <script src="./js/auth.js"></script>
+    <script src="./js/api.js"></script>
+    <script src="./js/utils.js"></script>
+    <script src="./js/websocket.js"></script>
+    <script src="./js/dashboard.js"></script>
+</head>
+
+<body>
+    <header class="app-header">
+        <a class="brand" href="index.html">ZenTalk <span>Audio</span></a>
+        <nav>
+            <a class="active" href="index.html">Dashboard</a>
+            <!-- <a href="pages/profile.html">Profile</a>
+            <a href="pages/block-list.html">Block List</a> -->
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="hero">
+            <div>
+                <p class="eyebrow">AUDIO COMMUNITY</p>
+                <h1>Discover your next conversation.</h1>
+                <p>Connect with people and start a real-time audio conversation.</p>
+            </div>
+            <div class="queue-actions">
+                <button id="enterQueueBtn" class="btn btn-primary">Join Queue</button>
+                <button id="exitQueueBtn" class="btn btn-secondary">Leave Queue</button>
+                <button id="refreshQueueBtn" class="btn btn-secondary">Refresh</button>
+            </div>
+        </section>
+
+        <section class="queue-section">
+            <div class="section-heading">
+                <div>
+                    <h2>People in queue</h2>
+                    <p id="queueStatus" role="status">Loading queue…</p>
+                </div>
+            </div>
+            <div id="queueList" class="queue-grid" aria-live="polite"></div>
+        </section>
+    </main>
+</body>
+
+</html>

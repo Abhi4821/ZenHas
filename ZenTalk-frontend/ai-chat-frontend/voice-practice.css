@@ -1,0 +1,310 @@
+
+:root {
+    color-scheme: dark;
+    --bg: #080808;
+    --panel: #141414;
+    --border: #303030;
+    --text: #f5f5f5;
+    --muted: #a0a0a0;
+    --accent: #d9d9d9;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: var(--bg);
+    color: var(--text);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+button, a {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+button:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+}
+
+.voice-app {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.voice-header {
+    height: 68px;
+    padding: 0 28px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--border);
+}
+
+.back-button {
+    color: var(--text);
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.back-button:hover {
+    color: #bdbdbd;
+}
+
+.header-title {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.connection-label {
+    color: #bcbcbc;
+    font-size: 12px;
+}
+
+.voice-content {
+    width: 100%;
+    max-width: 650px;
+    margin: 0 auto;
+    padding: 42px 22px 32px;
+    text-align: center;
+}
+
+.mode-label {
+    color: var(--muted);
+    font-size: 11px;
+    letter-spacing: 3px;
+}
+
+h1 {
+    margin: 14px 0 10px;
+    font-size: clamp(34px, 6vw, 48px);
+    letter-spacing: -1.5px;
+}
+
+.subtitle {
+    max-width: 460px;
+    margin: 0 auto;
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.voice-orb {
+    width: 150px;
+    height: 150px;
+    margin: 34px auto 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #444;
+    border-radius: 50%;
+    background: radial-gradient(circle at 35% 30%, #414141, #171717 65%);
+    box-shadow: 0 0 50px #ffffff0a;
+    transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.orb-icon {
+    font-size: 54px;
+}
+
+.voice-orb.listening {
+    animation: pulse 1.3s infinite alternate;
+    box-shadow: 0 0 38px #ffffff20;
+}
+
+.voice-orb.speaking {
+    animation: pulse 0.7s infinite alternate;
+    box-shadow: 0 0 50px #ffffff30;
+}
+
+@keyframes pulse {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.07);
+    }
+}
+
+h2 {
+    margin: 0 0 8px;
+    font-size: 21px;
+}
+
+.status-detail {
+    min-height: 22px;
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.mode-controls {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin: 28px 0;
+}
+
+.mode-button {
+    padding: 14px;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    color: var(--text);
+    background: var(--panel);
+    text-align: left;
+    font-weight: 600;
+}
+
+.mode-button small {
+    display: block;
+    margin-top: 7px;
+    color: var(--muted);
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.mode-button.active {
+    border-color: #aaa;
+    background: #242424;
+}
+
+.transcript-card {
+    padding: 20px;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    background: var(--panel);
+    text-align: left;
+}
+
+.transcript-heading {
+    color: var(--muted);
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    font-weight: 700;
+}
+
+.transcript-card p {
+    min-height: 22px;
+    margin: 9px 0 16px;
+    font-size: 14px;
+    line-height: 1.7;
+    overflow-wrap: anywhere;
+}
+
+.transcript-divider {
+    height: 1px;
+    margin: 14px 0;
+    background: var(--border);
+}
+
+.replay-button {
+    padding: 8px 0;
+    border: 0;
+    color: var(--text);
+    background: transparent;
+    font-size: 12px;
+}
+
+.action-controls {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 24px;
+}
+
+.mic-button, .stop-button {
+    padding: 14px 22px;
+    border: 1px solid var(--border);
+    border-radius: 30px;
+    color: #111;
+    background: #f1f1f1;
+    font-weight: 600;
+}
+
+.stop-button {
+    color: var(--text);
+    background: #222;
+}
+
+.privacy-note {
+    margin-top: 22px;
+    color: #777;
+    font-size: 11px;
+    line-height: 1.6;
+}
+
+.error-text {
+    color: #ff9999;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+@media (max-width: 520px) {
+    .voice-header {
+        height: 60px;
+        padding: 0 14px;
+    }
+
+    .header-title {
+        font-size: 14px;
+    }
+
+    .voice-content {
+        padding: 32px 15px;
+    }
+
+    .voice-orb {
+        width: 125px;
+        height: 125px;
+        margin-top: 28px;
+    }
+
+    .mode-controls {
+        gap: 8px;
+    }
+
+    .mode-button {
+        padding: 12px 10px;
+        font-size: 13px;
+    }
+
+    .transcript-card {
+        padding: 16px;
+    }
+
+    .mic-button, .stop-button {
+        padding: 13px 17px;
+        font-size: 13px;
+    }
+}
+
+
+.accent-selector {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin: 16px 0;
+}
+
+.accent-selector label {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.accent-selector select {
+    width: 100%;
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid var(--border-color, #444);
+    background: var(--card-bg, #1e1e1e);
+    color: inherit;
+    font-size: 14px;
+    cursor: pointer;
+}

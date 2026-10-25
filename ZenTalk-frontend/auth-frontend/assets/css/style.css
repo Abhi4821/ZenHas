@@ -1,0 +1,187 @@
+
+/* ========================================
+   ZENTALK — GLOBAL / SHARED STYLES
+   All colors come from theme.css
+======================================== */
+
+.container {
+    max-width: 420px;
+    margin: 0 auto;
+    padding: 20px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: var(--bg);
+    color: var(--text);
+}
+
+.card {
+    background: var(--surface);
+    color: var(--text);
+    border: 1px solid var(--border);
+    border-radius: 24px;
+    padding: 28px;
+    box-shadow: 0 12px 40px
+        rgba(var(--shadow-color), var(--shadow-opacity));
+}
+
+.input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 14px 16px;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    margin-top: 8px;
+    font-size: 15px;
+    background: var(--surface);
+    color: var(--text);
+}
+
+.input::placeholder {
+    color: var(--text-muted);
+}
+
+.input:focus {
+    border-color: var(--primary);
+    outline: 2px solid var(--focus-ring);
+    outline-offset: 1px;
+}
+
+.btn {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid transparent;
+    border-radius: 999px;
+    background: var(--primary);
+    color: var(--text-on-primary);
+    font-weight: 700;
+    font-size: 15px;
+    cursor: pointer;
+    margin-top: 16px;
+}
+
+.btn:hover {
+    background: var(--primary-hover);
+}
+
+.btn:active {
+    background: var(--primary-active);
+}
+
+.btn:focus-visible,
+.btn-outline:focus-visible,
+.link:focus-visible {
+    outline: 2px solid var(--focus-ring);
+    outline-offset: 3px;
+}
+
+.btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.btn-outline {
+    background: transparent;
+    border: 1px solid var(--border-strong);
+    color: var(--text);
+}
+
+.btn-outline:hover {
+    background: var(--surface-hover);
+}
+
+.link {
+    color: var(--primary);
+    cursor: pointer;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.link:hover {
+    color: var(--primary-hover);
+}
+
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 20px;
+    background: var(--surface);
+    color: var(--text);
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.grid3 {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin-top: 20px;
+}
+
+.opt-card {
+    padding: 24px;
+    border-radius: 20px;
+    background: var(--surface);
+    color: var(--text);
+    border: 1px solid var(--border);
+    text-align: center;
+    cursor: pointer;
+}
+
+.opt-card:hover {
+    background: var(--surface-hover);
+    border-color: var(--primary);
+}
+
+.otp-box {
+    display: flex;
+    gap: 10px;
+    margin-top: 12px;
+}
+
+.otp-box input {
+    flex: 1;
+    min-width: 0;
+    text-align: center;
+    font-size: 20px;
+    letter-spacing: 4px;
+    background: var(--surface);
+    color: var(--text);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+}
+
+.small {
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-top: 8px;
+}
+
+html {
+    background: var(--bg);
+    color: var(--text);
+}
+
+body {
+    background: var(--bg);
+    color: var(--text);
+}
+
+::selection {
+    background: var(--primary-soft);
+    color: var(--text);
+}
+
+:focus-visible {
+    scroll-margin: 8px;
+}
+
+* {
+    scrollbar-color: var(--scrollbar-thumb)
+        var(--scrollbar-track);
+}

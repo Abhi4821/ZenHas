@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#ffffff">
+    <title>AI Assistant</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="app">
+
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-top">
+                <div class="brand">
+                    <span class="brand-icon">✳</span>
+                    <span>AI Assistant</span>
+                </div>
+                <button class="icon-button mobile-close" id="mobileMenu">×</button>
+            </div>
+
+            <button class="new-chat" id="newChatBtn">
+                ＋ New chat
+            </button>
+            
+            <a class="new-chat voice-practice-link" href="./voice-practice.html">
+                🎙️ Voice Practice
+            </a>
+
+            <div class="history-heading">Recent chats</div>
+            <div class="history-list" id="historyList"></div>
+
+            <div class="sidebar-bottom">
+                <button class="theme-button" id="themeToggle">
+                    <span id="themeIcon">☾</span>
+                    <span id="themeLabel">Dark mode</span>
+                </button>
+            </div>
+        </aside>
+
+        <main class="main">
+            <header class="topbar">
+                <button class="icon-button menu-button" id="openSidebar">☰</button>
+                <div class="model-label">AI Assistant <span>⌄</span></div>
+            </header>
+
+            <section class="chat-area">
+                <div class="messages" id="messages" aria-live="polite">
+                    <div class="welcome" id="welcomeBlock">
+                        <div class="welcome-icon">✳</div>
+                        <h1>How can I help you today?</h1>
+                        <p>Ask me anything.</p>
+                    </div>
+                </div>
+
+                <div class="composer-area">
+                    <form class="composer" id="chatForm">
+                        <textarea
+                            id="messageInput"
+                            rows="1"
+                            maxlength="8000"
+                            placeholder="Message AI Assistant"
+                            aria-label="Your message"
+                        ></textarea>
+
+                        <div class="composer-bottom">
+                            <span class="char-count" id="charCount">0 / 8000</span>
+                            <button class="send-button" id="sendButton" type="submit">↑</button>
+                        </div>
+                    </form>
+                    <p class="disclaimer">AI can make mistakes. Check important information.</p>
+                </div>
+            </section>
+        </main>
+
+        <div class="toast" id="toast" role="status"></div>
+    </div>
+
+    <script src="./script.js"></script>
+    <script src="./voice-practice.js"></script>
+</body>
+</html>
