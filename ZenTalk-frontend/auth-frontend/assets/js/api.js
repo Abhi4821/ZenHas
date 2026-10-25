@@ -1,9 +1,17 @@
 // const HOST = window.location.hostname;
-const HOST = window.location.hostname ;
+// const HOST = window.location.hostname ;
 
-export const AUTH_SERVICE_URL = `http://${HOST}:8081`;
-export const AUDIO_SERVICE_URL = `http://${HOST}:8082`;
-export const AUDIO_FRONTEND_URL = `http://${HOST}:5501/audio-frontend/index.html`;
+// export const AUTH_SERVICE_URL = `http://${HOST}:8081`;
+// export const AUDIO_SERVICE_URL = `http://${HOST}:8082`;
+// export const AUDIO_FRONTEND_URL = `http://${HOST}:5501/audio-frontend/index.html`;
+
+// export const BASE_URL = `${AUTH_SERVICE_URL}/api/v1`;
+// export const AUDIO_BASE_URL = `${AUDIO_SERVICE_URL}/api/v1`;
+
+export const AUTH_SERVICE_URL = "http://192.168.1.83:8081";
+export const AUDIO_SERVICE_URL = "http://192.168.1.83:8082";
+export const AUDIO_FRONTEND_URL =
+    "http://192.168.1.83:5501/audio-frontend/index.html";
 
 export const BASE_URL = `${AUTH_SERVICE_URL}/api/v1`;
 export const AUDIO_BASE_URL = `${AUDIO_SERVICE_URL}/api/v1`;
