@@ -1,0 +1,12 @@
+﻿{
+  "rewrites": [
+    {
+      "source": "/",
+      "destination": "/auth-frontend/index.html"
+    },
+    {
+      "source": "/audio",
+      "destination": "/audio-frontend/index.html"
+    }
+  ]
+}
